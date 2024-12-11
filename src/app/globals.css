@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+  transition-duration: 0.1s;
+  animation-duration: 0.1s;
+  font-family: var(--font-dana);
+}
+body {
+  direction: rtl;
+}
