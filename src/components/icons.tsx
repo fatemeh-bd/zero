@@ -22,3 +22,20 @@ export const AttachmentIcon = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
+export const StarIcon = () => {
+  return (
+    <svg
+      width="22"
+      height="19"
+      viewBox="0 0 22 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11 0L13.5967 7.25735H22L15.2016 11.7426L17.7984 19L11 14.5147L4.20163 19L6.79837 11.7426L0 7.25735H8.40325L11 0Z"
+        fill="#0DFF96"
+      />
+    </svg>
+  );
+};
