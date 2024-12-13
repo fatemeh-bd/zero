@@ -196,7 +196,7 @@ const UploadFile = () => {
           alt="Zero Ai detected Icon"
           unoptimized
         />
-        <SubTitle>فایل مورد شامل دارای محتوای ناهنجار است.</SubTitle>
+        <SubTitle>فایل مورد نظر دارای محتوای ناهنجار می باشد.</SubTitle>
         <Button
           onClick={() => setOpenErrorModal({ status: false, msg: "" })}
           className="!bg-[#E05353] shadow-button  !border-none !rounded-lg font-bold min-w-[120px]"
