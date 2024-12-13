@@ -1,16 +1,28 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { buttonClass } from "../buttons/Button";
 import MobileMenuItems from "./MobileMenuItems";
 import useScreenWidth from "@/utils/useScreenWidth";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useScreenWidth(768);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setActiveLink(pathname);
+  }, [pathname]);
+
+  const [activeLink, setActiveLink] = useState("");
+
+  const getClassNames = (path: string) => {
+    return activeLink === path ? "text-[#0DFF96]" : "";
+  };
 
   return (
     <header className="flex gap-8 justify-between items-center w-full">
@@ -25,7 +37,7 @@ const Header = () => {
           {isMenuOpen && (
             <div
               onClick={() => setIsMenuOpen(false)}
-              className="bg-black bg-opacity-40 blur-lg  fixed inset-0 size-full"
+              className="bg-black bg-opacity-40 blur-lg fixed inset-0 size-full"
             ></div>
           )}
           <nav
@@ -50,15 +62,23 @@ const Header = () => {
 
       {!isMobile && (
         <nav className="md:flex hidden lg:gap-12 gap-8 lg:text-lg text-sm items-center border border-white rounded-full w-fit h-fit py-2 px-12">
-          <Link href={"/"}>خانه</Link>
-          <Link href={"/aboutUs"}>درباره ما</Link>
-          <Link href={"/prices"}>قیمت‌ها</Link>
-          <Link href={"/contactUs"}>تماس با ما</Link>
+          <Link href="/" className={getClassNames("/")}>
+            خانه
+          </Link>
+          <Link href="/aboutUs" className={getClassNames("/aboutUs")}>
+            درباره ما
+          </Link>
+          <Link href="/prices" className={getClassNames("/prices")}>
+            قیمت‌ها
+          </Link>
+          <Link href="/contactUs" className={getClassNames("/contactUs")}>
+            تماس با ما
+          </Link>
         </nav>
       )}
-        <Link href={"/"} className={`${buttonClass} md:block hidden`}>
-          آزمایش کنید
-        </Link>
+      <Link href="/" className={`${buttonClass} md:block hidden`}>
+        آزمایش کنید
+      </Link>
     </header>
   );
 };
