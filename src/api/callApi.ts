@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 
-export const BASE_URL = "https://api.nexovpn.net";
+export const BASE_URL = "https://api.zeroai.ir";
 
 //  axios تنظیمات مشترک
 const createAxiosInstance = (

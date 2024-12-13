@@ -28,13 +28,13 @@ const UploadFile = () => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     const maxFileSize = 50 * 1024 * 1024; // 50MB in bytes
-  
+
     if (file) {
       if (file.size > maxFileSize) {
         notify("حجم فایل نباید بیشتر از 50 مگابایت باشد.", "error");
         return;
       }
-  
+
       const sizeInKB = (file.size / 1024).toFixed(2); // Convert size to KB
       const type = file.type.startsWith("image")
         ? "image"
@@ -43,11 +43,10 @@ const UploadFile = () => {
         : file.name.endsWith(".gif")
         ? "gif"
         : "unknown";
-  
+
       setFileInfo({ name: file.name, size: `${sizeInKB} KB`, type, file });
     }
   };
-  
 
   const detectedHandler = async () => {
     if (!fileInfo) {
@@ -152,11 +151,11 @@ const UploadFile = () => {
         onClose={() => setOpenSuccessModal(false)}
       >
         <Image
-          src={"/images/done.webp"}
-          width={100}
-          height={100}
-          className="size-32"
-          alt="done icon"
+          src="/images/done.webp"
+          width={128}
+          height={75}
+          alt="Zero Ai Done Icon"
+          unoptimized
         />
         <Paraghrap>
           تبریک <br /> ما در فایل ارسالی شما محتوای ناهنجاری پیدا نکردیم
@@ -174,11 +173,11 @@ const UploadFile = () => {
         onClose={() => setOpenErrorModal({ status: false, msg: "" })}
       >
         <Image
-          src={"/images/bot.webp"}
-          width={100}
-          height={100}
-          className="w-32"
-          alt="done icon"
+          src="/images/bot.webp"
+          width={128}
+          height={75}
+          alt="Zero Ai detected Icon"
+          unoptimized
         />
         <Paraghrap>فایل مورد شامل دارای محتوای ناهنجار است.</Paraghrap>
         <Button
