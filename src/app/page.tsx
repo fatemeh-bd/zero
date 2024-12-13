@@ -39,7 +39,9 @@ export default function Home() {
         تشخیص هوشمند و خودکار محتوای
         <span className="text-[#EE2020] inline-block mx-1">غیراخلاقی</span> و
         <span className="text-[#EE2020] inline-block mx-1">نامتعارف،</span> با
-        بهره‌گیری از پیشرفته‌ترین فناوری‌های هوش مصنوعی
+        بهره‌گیری از 
+        <br className="md:block hidden"/>
+        پیشرفته‌ترین فناوری‌های هوش مصنوعی
       </SubTitle>
       <div className="flex lg:flex-nowrap flex-wrap justify-center gap-4 items-center">
         <UploadFile />
