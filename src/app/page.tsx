@@ -12,13 +12,11 @@ export default function Home() {
         تشخیص هوشمند و خودکار محتوای
         <span className="text-[#EE2020] inline-block mx-1">غیراخلاقی</span> و
         <span className="text-[#EE2020] inline-block mx-1">نامتعارف،</span> با
-        بهره‌گیری از
-        <br />
-        پیشرفته‌ترین فناوری‌های هوش مصنوعی
+        بهره‌گیری از پیشرفته‌ترین فناوری‌های هوش مصنوعی
       </Paraghrap>
       <div className="flex lg:flex-nowrap flex-wrap justify-center gap-4 items-center">
         <UploadFile />
-        <Link className={buttonClass} href={"/prices"}>
+        <Link href={"/"} className={buttonClass}>
           اطلاعات بیشتر
         </Link>
       </div>

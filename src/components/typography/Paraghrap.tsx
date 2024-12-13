@@ -8,13 +8,13 @@ const Paraghrap = ({
   className?: string;
 }) => {
   return (
-    <p
-      className={`lg:text-xl text-base py-6 text-center px-8 font-medium lg:leading-10 leading-8 ${
+    <h2
+      className={`lg:text-xl text-base py-6 text-center sm:px-8 px-0 font-medium lg:leading-10 leading-8 ${
         className || ""
       }`}
     >
       {children}
-    </p>
+    </h2>
   );
 };
 

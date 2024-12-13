@@ -28,13 +28,13 @@ const UploadFile = () => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     const maxFileSize = 50 * 1024 * 1024; // 50MB in bytes
-  
+
     if (file) {
       if (file.size > maxFileSize) {
         notify("حجم فایل نباید بیشتر از 50 مگابایت باشد.", "error");
         return;
       }
-  
+
       const sizeInKB = (file.size / 1024).toFixed(2); // Convert size to KB
       const type = file.type.startsWith("image")
         ? "image"
@@ -43,11 +43,10 @@ const UploadFile = () => {
         : file.name.endsWith(".gif")
         ? "gif"
         : "unknown";
-  
+
       setFileInfo({ name: file.name, size: `${sizeInKB} KB`, type, file });
     }
   };
-  
 
   const detectedHandler = async () => {
     if (!fileInfo) {
@@ -100,23 +99,36 @@ const UploadFile = () => {
   return (
     <>
       <Button
-        className="!pl-0 !py-0 lg:!gap-8 !gap-2 justify-between lg:w-[500px]"
+        className="!pl-0 max-[500px]:pr-4  !py-0 lg:!gap-8 !gap-2 justify-between lg:w-[500px]"
         onClick={() => chooseFileRef.current?.click()}
       >
         <span className="w-[90%]">
-          {fileInfo
-            ? `${
-                fileInfo.name.length >= 20
-                  ? `${fileInfo.name.slice(0, 15)}..${fileInfo.name.slice(
-                      fileInfo.name.length - 4,
-                      200
-                    )} `
-                  : fileInfo.name
-              } - ${fileInfo.size}`
-            : "فایل عکس، گیف، ویدیوی مورد نظر خود را آپلود کنید"}
+          {fileInfo ? (
+            `${
+              fileInfo.name.length >= 20
+                ? `${fileInfo.name.slice(0, 15)}..${fileInfo.name.slice(
+                    fileInfo.name.length - 4,
+                    200
+                  )} `
+                : fileInfo.name
+            } - ${fileInfo.size}`
+          ) : (
+            <>
+              <span className="hidden sm:block">
+                فایل عکس، گیف، ویدیوی مورد نظر خود را آپلود کنید
+              </span>
+              <span className="block sm:hidden">
+                فایل مورد نظر خود را آپلود کنید
+              </span>
+            </>
+          )}
         </span>
+
         <AttachmentIcon className="bg-primary p-2 rounded-full text-center self-center" />
       </Button>
+      <p className="block sm:hidden text-primary text-xs">
+        فایل انتخابی باید عکس، گیف و یا ویدیو باشد (زیر ۵۰ مگابایت)
+      </p>
       {/* <Button
         className="bg-primary !border-transparent"
         onClick={detectedHandler}
