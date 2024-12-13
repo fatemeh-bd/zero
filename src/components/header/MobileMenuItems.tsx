@@ -60,8 +60,13 @@ const MobileMenuItems = () => {
           </Link>
         </li>
       </ul>
-      <Link href={"mail:zeroaiir@gmail.com"} className={`${buttonClass} !w-fit mx-auto`}>
-     ایمیل پشتیبانی
+      <Link
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=zeroaiir@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${buttonClass} !w-fit mx-auto`}
+      >
+        ایمیل پشتیبانی
       </Link>
     </>
   );
