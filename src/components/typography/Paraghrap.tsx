@@ -9,7 +9,7 @@ const Paraghrap = ({
 }) => {
   return (
     <p
-      className={`text-xl py-6 text-center px-8 font-medium leading-10 ${
+      className={`lg:text-xl text-base py-6 text-center px-8 font-medium lg:leading-10 leading-8 ${
         className || ""
       }`}
     >
