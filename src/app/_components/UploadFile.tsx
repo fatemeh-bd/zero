@@ -27,7 +27,14 @@ const UploadFile = () => {
   } | null>(null);
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
+    const maxFileSize = 50 * 1024 * 1024; // 50MB in bytes
+  
     if (file) {
+      if (file.size > maxFileSize) {
+        notify("حجم فایل نباید بیشتر از 50 مگابایت باشد.", "error");
+        return;
+      }
+  
       const sizeInKB = (file.size / 1024).toFixed(2); // Convert size to KB
       const type = file.type.startsWith("image")
         ? "image"
@@ -36,9 +43,11 @@ const UploadFile = () => {
         : file.name.endsWith(".gif")
         ? "gif"
         : "unknown";
+  
       setFileInfo({ name: file.name, size: `${sizeInKB} KB`, type, file });
     }
   };
+  
 
   const detectedHandler = async () => {
     if (!fileInfo) {

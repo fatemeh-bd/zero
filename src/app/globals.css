@@ -10,3 +10,9 @@
 body {
   direction: rtl;
 }
+
+.Toastify__toast-container {
+  width: 100%;
+  max-width: 70vw;
+  text-align: right;
+}
