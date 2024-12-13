@@ -45,7 +45,7 @@ export default function Home() {
       </SubTitle>
       <div className="flex lg:flex-nowrap flex-wrap justify-center gap-4 items-center">
         <UploadFile />
-        <Link href={"/"} className={buttonClass}>
+        <Link href={"/prices"} className={buttonClass}>
           اطلاعات بیشتر
         </Link>
       </div>

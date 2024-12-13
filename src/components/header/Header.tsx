@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { buttonClass } from "../buttons/Button";
 import MobileMenuItems from "./MobileMenuItems";
 import useScreenWidth from "@/utils/useScreenWidth";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState("");
 
   const getClassNames = (path: string) => {
-    return activeLink === path ? "text-[#0DFF96]" : "";
+    return activeLink === path ? "text-secondary" : "";
   };
 
   return (
@@ -76,8 +76,14 @@ const Header = () => {
           </Link>
         </nav>
       )}
-      <Link href="/" className={`${buttonClass} md:block hidden`}>
-        آزمایش کنید
+      <Link
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=zeroaiir@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${buttonClass} md:flex !gap-2 hidden hover:text-secondary hover:border-secondary`}
+      >
+        <EnvelopeIcon className="size-6" />
+        ایمیل پشتیبانی
       </Link>
     </header>
   );

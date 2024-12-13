@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BanknotesIcon,
   HomeIcon,
@@ -8,8 +8,21 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { buttonClass } from "../buttons/Button";
+import { usePathname } from "next/navigation";
 
 const MobileMenuItems = () => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setActiveLink(pathname);
+  }, [pathname]);
+
+  const [activeLink, setActiveLink] = useState("");
+
+  const getClassNames = (path: string) => {
+    return activeLink === path ? "text-secondary" : "";
+  };
+
   return (
     <>
       <Link href={"/"}>
@@ -29,26 +42,26 @@ const MobileMenuItems = () => {
           </Link>
         </li>
         <li>
-          <Link href={"/aboutUs"}>
+          <Link href={"/aboutUs"} className={getClassNames("/aboutUs")}>
             <InformationCircleIcon className="size-5" />
             درباره ما
           </Link>
         </li>
         <li>
-          <Link href={"/prices"}>
+          <Link href={"/prices"} className={getClassNames("/prices")}>
             <BanknotesIcon className="size-5" />
             قیمت‌ها
           </Link>
         </li>
         <li>
-          <Link href={"/contactUs"}>
+          <Link href={"/contactUs"} className={getClassNames("/contactUs")}>
             <PhoneIcon className="size-5" />
             تماس با ما
           </Link>
         </li>
       </ul>
-      <Link href={"/"} className={`${buttonClass} !w-fit mx-auto`}>
-        آزمایش کنید
+      <Link href={"mail:zeroaiir@gmail.com"} className={`${buttonClass} !w-fit mx-auto`}>
+     ایمیل پشتیبانی
       </Link>
     </>
   );
