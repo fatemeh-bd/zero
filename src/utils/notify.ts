@@ -9,6 +9,7 @@ export const notify = (text: string, type: "error" | "success") => {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
+      theme: "dark",
       progress: undefined,
       transition: Bounce,
     });
@@ -20,10 +21,9 @@ export const notify = (text: string, type: "error" | "success") => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
+      theme: "dark",
       progress: undefined,
       transition: Bounce,
-      
     });
   }
- 
 };
