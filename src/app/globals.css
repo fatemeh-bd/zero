@@ -13,6 +13,15 @@ body {
 .Toastify__toast-container {
   text-align: right;
 }
+
+::-webkit-scrollbar-track {
+  background: rgb(31, 31, 31) !important;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(59, 59, 59);
+}
 @media (min-width: 512px) {
   .Toastify__toast-container {
     width: 100%;
