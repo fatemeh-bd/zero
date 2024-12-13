@@ -36,7 +36,7 @@ const MobileMenuItems = () => {
       </Link>
       <ul className="flex flex-col items-start gap-8 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2 py-8">
         <li>
-          <Link href={"/"}>
+          <Link href={"/"} className={getClassNames("/")}>
             <HomeIcon className="size-5" />
             خانه
           </Link>
