@@ -2,10 +2,10 @@
 import { postMethod } from "@/api/callApi";
 import { UPLOAD_GIF, UPLOAD_IMAGE, UPLOAD_VIDEO } from "@/api/endpoints";
 import Button from "@/components/buttons/Button";
-import { AttachmentIcon } from "@/components/icons";
 import Modal from "@/components/modal/Modal";
 import Paraghrap from "@/components/typography/Paraghrap";
 import { notify } from "@/utils/notify";
+import { PaperClipIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
@@ -124,7 +124,7 @@ const UploadFile = () => {
           )}
         </span>
 
-        <AttachmentIcon className="bg-primary p-2 rounded-full text-center self-center" />
+        <PaperClipIcon className="lg:size-12 size-[2.35rem] bg-primary p-2 rounded-full text-center self-center" />
       </Button>
       <p className="block sm:hidden text-primary text-xs">
         فایل انتخابی باید عکس، گیف و یا ویدیو باشد (زیر ۵۰ مگابایت)
