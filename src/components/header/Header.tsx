@@ -4,9 +4,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import { buttonClass } from "../buttons/Button";
-import { Bars3Icon } from "@heroicons/react/16/solid";
 import MobileMenuItems from "./MobileMenuItems";
 import useScreenWidth from "@/utils/useScreenWidth";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
             className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Bars3Icon className="size-6" />
+            <Bars3Icon className="size-8" />
           </button>
           {isMenuOpen && (
             <div

@@ -3,7 +3,7 @@ import { postMethod } from "@/api/callApi";
 import { UPLOAD_GIF, UPLOAD_IMAGE, UPLOAD_VIDEO } from "@/api/endpoints";
 import Button from "@/components/buttons/Button";
 import Modal from "@/components/modal/Modal";
-import Paraghrap from "@/components/typography/Paraghrap";
+import SubTitle from "@/components/typography/SubTitle";
 import { notify } from "@/utils/notify";
 import { PaperClipIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -89,7 +89,11 @@ const UploadFile = () => {
         if (res?.isSuccess) {
           setOpenSuccessModal(true);
         } else {
-          setOpenErrorModal({ status: true, msg: res.message });
+          if (res?.statusCode === 400) {
+            setOpenErrorModal({ status: true, msg: res.message });
+          } else {
+            notify(res?.message, "error");
+          }
         }
       })
       .catch((error) => notify(error.message, "error"))
@@ -170,9 +174,9 @@ const UploadFile = () => {
           alt="Zero Ai Done Icon"
           unoptimized
         />
-        <Paraghrap>
+        <SubTitle>
           تبریک <br /> ما در فایل ارسالی شما محتوای ناهنجاری پیدا نکردیم
-        </Paraghrap>
+        </SubTitle>
         <Button
           onClick={() => setOpenSuccessModal(false)}
           className="!bg-[#17C46E] shadow-button !border-none !rounded-lg font-bold min-w-[120px]"
@@ -192,7 +196,7 @@ const UploadFile = () => {
           alt="Zero Ai detected Icon"
           unoptimized
         />
-        <Paraghrap>فایل مورد شامل دارای محتوای ناهنجار است.</Paraghrap>
+        <SubTitle>فایل مورد شامل دارای محتوای ناهنجار است.</SubTitle>
         <Button
           onClick={() => setOpenErrorModal({ status: false, msg: "" })}
           className="!bg-[#E05353] shadow-button  !border-none !rounded-lg font-bold min-w-[120px]"

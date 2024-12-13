@@ -41,11 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-
-        {/* Tawk.to Script */}
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
+      {/* Tawk.to Script */}
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
               var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
               (function(){
                 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -56,9 +55,13 @@ export default function RootLayout({
                 s0.parentNode.insertBefore(s1,s0);
               })();
             `,
-          }}
-        ></Script>
-
+        }}
+      ></Script>
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="7bae05bc-c349-4957-95b6-b0b137283562"
+      ></Script>
 
       <body
         className={`${font.variable} ${font.variable} text-lg antialiased bg-black w-full text-white bg-[url('/images/background.webp')] bg-no-repeat bg-cover`}
@@ -75,11 +78,7 @@ export default function RootLayout({
             className="lg:w-[175px] w-[100px]"
           />
         </div>
-
-        
       </body>
-
-      
     </html>
   );
 }

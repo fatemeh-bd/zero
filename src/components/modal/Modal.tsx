@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
       ></div>
 
       <div
-        className={`relative shadow-modal bg-[#1F252C] z-[9999] rounded-lg mx-auto  overflow-y-auto
+        className={`relative shadow-modal bg-[#1F252C] z-[9999] rounded-lg max-w-[90%] mx-auto  overflow-y-auto
         transition-all duration-300 delay-200 ${
           isOpen ? "opacity-100" : "opacity-0"
         } p-4 flex flex-col items-center justify-center ${className || ""}`}

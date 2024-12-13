@@ -12,11 +12,11 @@ const PriceBox = ({
   price?: number;
 }) => {
   return (
-    <div className="bg-white bg-opacity-20 p-4 rounded-lg lg:col-span-4 col-span-12 w-full">
+    <div className="bg-white bg-opacity-20 p-4 rounded-lg lg:col-span-4 col-span-12 w-full min-h-[300px]">
       <p className="p-4 font-bold text-2xl text-center bg-white bg-opacity-25 text-[#0DFF96] rounded-lg">
         {title}
       </p>
-      <ul className="my-6 space-y-2">
+      <ul className="mt-6 space-y-2">
         {items.map((item, index) => (
           <li key={index} className="flex items-center gap-2">
             <StarIcon className="size-6 text-[#0DFF96]" />
@@ -25,7 +25,7 @@ const PriceBox = ({
         ))}
       </ul>
       {price && (
-        <p className="px-6 py-3 text-center bg-white bg-opacity-35 text-[#0DFF96] rounded-lg w-fit mx-auto">
+        <p className="px-6 py-3 mt-8 text-center bg-white bg-opacity-35 text-[#0DFF96] rounded-lg w-fit mx-auto">
           {numberWithCommas(price)} تومان
         </p>
       )}

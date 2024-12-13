@@ -1,6 +1,6 @@
 import React from "react";
 
-const Paraghrap = ({
+const SubTitle = ({
   children,
   className,
 }: {
@@ -18,4 +18,4 @@ const Paraghrap = ({
   );
 };
 
-export default Paraghrap;
+export default SubTitle;
