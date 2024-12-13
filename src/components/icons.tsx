@@ -5,7 +5,7 @@ export const AttachmentIcon = ({ className }: { className?: string }) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      className={`size-12 ${className || ""}`}
+      className={`lg:size-11 size-[2.35rem] ${className || ""}`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_5_35)">

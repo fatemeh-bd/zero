@@ -1,7 +1,8 @@
-import Button from "@/components/buttons/Button";
-import { AttachmentIcon } from "@/components/icons";
+import { buttonClass } from "@/components/buttons/Button";
 import Paraghrap from "@/components/typography/Paraghrap";
 import Title from "@/components/typography/Title";
+import UploadFile from "./_components/UploadFile";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,13 +16,11 @@ export default function Home() {
         <br />
         پیشرفته‌ترین فناوری‌های هوش مصنوعی
       </Paraghrap>
-      <div className="flex gap-4 items-center">
-        <Button className="!pl-0 !py-0 justify-between">
-          فایل عکس،گیف، ویدیوی مورد نظر خود را اپلود کنید
-          <AttachmentIcon className="bg-primary p-2 rounded-full text-center self-center" />
-        </Button>
-        <Button className="bg-primary !border-transparent">تست رایگان</Button>
-        <Button>اطلاعات بیشتر</Button>
+      <div className="flex lg:flex-nowrap flex-wrap justify-center gap-4 items-center">
+        <UploadFile />
+        <Link className={buttonClass} href={"/prices"}>
+          اطلاعات بیشتر
+        </Link>
       </div>
     </section>
   );
