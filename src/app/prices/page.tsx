@@ -8,13 +8,15 @@ const page = () => {
       "پردازش ۵ فایل در ماه",
       "پشتیبانی از فرمت‌های عکس و گیف",
       "بدون ذخیره‌سازی اطلاعات",
+      "ارائه وب سرویس",
     ],
-    pro: ["پردازش نامحدود", "پشتیبانی از تمام فرمت‌ها", "پاسخ سریع‌تر"],
+    pro: ["پردازش نامحدود", "پشتیبانی از تمام فرمت‌ها", "پاسخ سریع‌تر", "ارائه وب سرویس",],
     vip: [
       "پردازش نامحدود",
       "پشتیبانی از تمام فرمت‌ها",
       "پاسخ سریع‌تر",
       "نیازمند به گفتگو",
+      "ارائه وب سرویس",
     ],
   };
   return (
@@ -22,7 +24,7 @@ const page = () => {
       <Title>پلن مناسب خود را انتخاب کنید</Title>
       <div className="grid grid-cols-12 gap-8 items-stretch">
         <PriceBox title="رایگان" items={options.free} />
-        <PriceBox title="حرفه‌ای" items={options.pro} price={2000000} />
+        <PriceBox title="حرفه‌ای" items={options.pro} price={200000} />
         <PriceBox title="سازمانی" items={options.vip} />
       </div>
     </section>
