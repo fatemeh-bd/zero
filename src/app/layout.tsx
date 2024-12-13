@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Image from "next/image";
+import Script from "next/script";
 const font = localFont({
   src: [
     {
@@ -37,6 +38,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
+
+        {/* Tawk.to Script */}
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/675bf4a3af5bfec1dbdb4c5e/1ievj78gk';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+              })();
+            `,
+          }}
+        ></Script>
+
+
       <body
         className={`${font.variable} ${font.variable} text-lg antialiased bg-black w-full text-white bg-[url('/images/background.webp')] bg-no-repeat bg-cover`}
       >
@@ -50,7 +70,11 @@ export default function RootLayout({
             height={33}
           />
         </div>
+
+        
       </body>
+
+      
     </html>
   );
 }
