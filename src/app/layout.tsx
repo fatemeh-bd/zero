@@ -64,10 +64,10 @@ export default function RootLayout({
       ></Script>
 
       <body
-        className={`${font.variable} ${font.variable} text-lg antialiased bg-black w-full text-white bg-[url('/images/background.webp')] bg-no-repeat bg-cover`}
+        className={`${font.variable} ${font.variable} h-svh overflow-auto text-lg antialiased bg-black w-full text-white bg-[url('/images/background.webp')] bg-no-repeat bg-cover`}
       >
         <ToastContainer />
-        <div className="max-w-screen-2xl h-screen overflow-auto mx-auto md:py-6 py-4 md:px-12 px-6 flex flex-col md:gap-2 gap-8 md:justify-between items-center w-full">
+        <div className="max-w-screen-2xl h-full mx-auto md:py-6 py-4 md:px-12 px-6 flex flex-col md:gap-2 gap-8 md:justify-between items-center w-full">
           <Header />
           <main className="py-8">{children}</main>
           <Image

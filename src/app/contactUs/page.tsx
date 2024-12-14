@@ -13,7 +13,7 @@ const page = () => {
         href={"tel:09175856985"}
         className="text-xl block text-center px-8 font-medium leading-10"
       >
-        تلفن: +98 9175856985
+        تلفن:  098 917
       </Link>
     </section>
   );
